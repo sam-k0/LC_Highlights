@@ -8,6 +8,6 @@ namespace LC_Highlights
     {
         public const string PLUGIN_GUID = "mnc.highlights";
         public const string PLUGIN_NAME = "GeForce Highlights";
-        public const string PLUGIN_VERSION = "2024.03.22";
+        public const string PLUGIN_VERSION = "2024.03.23";
     }
 }

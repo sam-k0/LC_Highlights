@@ -53,14 +53,16 @@ namespace LC_Highlights
     [HarmonyPatch("KillPlayer")]
     class PlayerKillPatch
     {
-        
-
         public static void Prefix(PlayerControllerB __instance, ref CauseOfDeath causeOfDeath)
         {
             string hname = DateTime.Now.ToString("yyyyMMdd_HHmmss")+ "_"+ Convert.GetCauseOfDeathString((int)causeOfDeath);
             Highlight.SaveRecording(hname);
             Plugin.Log.LogMessage($"Saved recording {hname} because player died!");
-            Highlight.ShowSummary();
+            if(Plugin.cfgShowOverlayImmediately.Value)
+            {
+                Highlight.ShowSummary();
+            }
+            
         }
     }
 
